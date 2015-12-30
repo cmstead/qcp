@@ -1,0 +1,21 @@
+{
+  "name": "qcp",
+  "version": "0.1.0",
+  "description": "A recursive file copy utility",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha ./test/"
+  },
+  "author": "Chris Stead",
+  "license": "MPL-2.0",
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "mocha": "^2.3.4",
+    "mockery": "^1.4.0",
+    "sinon": "^1.17.2"
+  },
+  "dependencies": {
+    "glob": "^6.0.3",
+    "read-dir-files": "^0.1.1"
+  }
+}
