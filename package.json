@@ -4,7 +4,7 @@
   "description": "A recursive file copy utility",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha ./test/"
+    "test": "node ./node_modules/mocha/bin/mocha ./test/"
   },
   "author": "Chris Stead",
   "license": "MPL-2.0",
@@ -15,6 +15,7 @@
     "sinon": "^1.17.2"
   },
   "dependencies": {
+    "fs-extra": "^0.26.3",
     "glob": "^6.0.3",
     "read-dir-files": "^0.1.1"
   }

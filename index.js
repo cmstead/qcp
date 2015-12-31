@@ -1,6 +1,6 @@
 'use strict';
 
-var fs = require('fs');
+var fs = require('fs-extra');
 
 function copy (source) {
 	if(!fs.lstatSync(source).isDirectory()){

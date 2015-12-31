@@ -43,7 +43,7 @@ describe('qcp', function () {
 		});
 		
 		mockery.registerMock('glob', globFake);
-		mockery.registerMock('fs', fsFake);
+		mockery.registerMock('fs-extra', fsFake);
 		
 		qcp = require('../index');
 	});
