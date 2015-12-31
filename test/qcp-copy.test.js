@@ -27,6 +27,7 @@ describe('qcp', function () {
 		
 		globFake = {
 			sync: function () {
+                console.log('globFake.sync called');
 				return fakeFileList;
 			}
 		};
@@ -55,16 +56,22 @@ describe('qcp', function () {
 	
 	describe('copy', function () {
 		
-		it('should throw an error if path is not a directory', function () {
+		it('should throw an error if source path is not a directory', function () {
 			lstatResponse.isDirectory = function () { return false; }; // fail directory check
-			assert.throws(qcp.copy.bind(null, 'bad/path/', '../'));
+			assert.throws(qcp.copy.bind(null, 'bad/path/', '../'), 'Source path must be a directory');
 		});
 		
-		it('should throw an error if path is not a directory', function () {
+		it('should not throw an error if source path is a directory', function () {
 			lstatResponse.isDirectory = function () { return true; }; // pass directory check
-			assert.doesNotThrow(qcp.copy.bind(null, 'bad/path/', '../'));
+			assert.doesNotThrow(qcp.copy.bind(null, 'good/path/', '../'));
 		});
 		
+        // it('should glob all files from source directory', function () {
+        //     sinon.spy(globFake, 'sync');
+        //     qcp.copy('source/', 'dest/');
+        //     assert.equal(JSON.stringify(globFake.sync.getCall(0).args), '[dest/**/*]');
+        // });
+        
 	});
 	
 });
