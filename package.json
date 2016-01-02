@@ -16,6 +16,7 @@
     "tsd": "^0.6.5"
   },
   "dependencies": {
+    "async": "^1.5.0",
     "fs-extra": "^0.26.3",
     "glob": "^6.0.3",
     "read-dir-files": "^0.1.1"
